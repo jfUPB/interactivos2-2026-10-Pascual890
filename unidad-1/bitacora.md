@@ -88,12 +88,12 @@ stack(
 ```
 
 
-
-
-
-
-
 ## Bitácora de reflexión
+<img width="865" height="300" alt="sfi2 act5" src="https://github.com/user-attachments/assets/05d01e5c-4079-424a-a0c0-9c75eb9f5569" />
+
+Primero, al ejecutar el código en Strudel, la función .osc() convierte cada sonido en un mensaje digital. 
+Segundo, el OSCBridge actúa como un intermediario que recibe esos datos y los transmite en tiempo real hacia el navegador. 
+Por último, el archivo visualesHouse.html recibe la información y utiliza p5.js para transformar esos mensajes en cambios visuales, logrando que la animación reaccione exactamente al ritmo de la música.
 
 
 
