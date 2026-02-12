@@ -43,7 +43,7 @@ De este modo, ya se pueden mandar señales usando el mismo beat de strudel que t
 
 Luego se modificó el archivo de ejemplo de visuales
 
-Se realizaron **3 modificaciones principales** al código base del profesor para mejorar la experiencia visual y sincronizar mejor con los parámetros musicales del código Strudel.
+Se realizaron 3 modificaciones principales al código base del profesor para mejorar la experiencia visual y sincronizar mejor con los parámetros musicales del código Strudel.
 
 ---
 
@@ -71,18 +71,9 @@ function dibujarBombo(p, c) {
 ```
 
 ### ¿Qué cambia?
-- **Antes**: El círculo crecía linealmente según el progreso (`p`)
-- **Ahora**: El círculo tiene un efecto de "rebote" usando la función `sin(p * PI)`
+- Antes: El círculo crecía linealmente según el progreso (`p`)
+- Ahora: El círculo tiene un efecto de "rebote" usando la función `sin(p * PI)`
 
-### ¿Por qué?
-La función seno crea una curva suave que:
-1. Empieza en 0
-2. Crece hasta 1 a la mitad del tiempo
-3. Decrece de vuelta a 0
-
-Esto simula el comportamiento físico de un bombo real que golpea y rebota.
-
----
 
 ## MODIFICACIÓN 2: Hi-Hats con Estela de Luz Reactiva a Velocity
 
@@ -122,28 +113,15 @@ function dibujarHat(anim, p, c) {
 ```
 
 ### ¿Qué cambia?
-- **Antes**: Cuadrado amarillo que se reducía en su posición
-- **Ahora**: Estela de luz vertical que sube y responde a velocity
-
-### ¿Por qué?
-En el código Strudel tenemos:
-```javascript
-s("hh*4").gain(0.7).velocity(sine.range(0.2, 0.9).slow(1))
-```
+- Antes: Cuadrado amarillo que se reducía en su posición
+- Ahora: Estela de luz vertical que sube y responde a velocity
 
 La velocity varía entre 0.2 y 0.9 siguiendo una onda seno. La visualización ahora refleja esto:
-- **Velocity baja (0.2)**: Estela corta (100px)
-- **Velocity alta (0.9)**: Estela larga (300px)
+- Velocity baja (0.2): Estela corta (100px)
+- Velocity alta (0.9): Estela larga (300px)
 
-### Elementos visuales:
-1. **Línea vertical**: Representa la estela que sube
-2. **Grosor decreciente**: De 8px a 2px para efecto de disipación
-3. **Punto brillante**: Círculo blanco en la punta para marcar el extremo
-4. **Alpha decreciente**: Se desvanece mientras sube
 
----
-
-## MODIFICACIÓN 3: Piano con Ondas Concéntricas
+## MODIFICACIÓN 3: Piano con Ondas
 
 ### Código Original:
 No existía visualización específica para el piano (usaba `dibujarDefault`)
@@ -370,4 +348,7 @@ Código final de visuales
 </html>
 ```
 ## Bitácora de reflexión
+<img width="796" height="347" alt="sfi2diagramaU2" src="https://github.com/user-attachments/assets/c387fad8-dd67-471f-8a38-f5343c40e0be" />
+El pc abre un server de strudel local en http://localhost:4321/. Luego se abre un oscbridge y se usan comandos para enviar las pistas por osc a las visuales. En se abren las visuales en (http://localhost:4321/visualesU2.5.html), las cuales reaccionan a las señales enviadas por el bridge.
+Primero, al ejecutar el código en Strudel, la función .osc() convierte cada sonido en un mensaje digital. Segundo, el OSCBridge actúa como un intermediario que recibe esos datos y los transmite en tiempo real hacia el navegador. Por último, el archivo visualesU2.5.html recibe la información y utiliza p5.js para transformar esos mensajes en cambios visuales, logrando que la animación reaccione exactamente al ritmo de la música.
 
