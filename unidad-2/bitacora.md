@@ -349,6 +349,9 @@ Código final de visuales
 ```
 ## Bitácora de reflexión
 <img width="796" height="347" alt="sfi2diagramaU2" src="https://github.com/user-attachments/assets/c387fad8-dd67-471f-8a38-f5343c40e0be" />
+
+
 El pc abre un server de strudel local en http://localhost:4321/. Luego se abre un oscbridge y se usan comandos para enviar las pistas por osc a las visuales. En se abren las visuales en (http://localhost:4321/visualesU2.5.html), las cuales reaccionan a las señales enviadas por el bridge.
 Primero, al ejecutar el código en Strudel, la función .osc() convierte cada sonido en un mensaje digital. Segundo, el OSCBridge actúa como un intermediario que recibe esos datos y los transmite en tiempo real hacia el navegador. Por último, el archivo visualesU2.5.html recibe la información y utiliza p5.js para transformar esos mensajes en cambios visuales, logrando que la animación reaccione exactamente al ritmo de la música.
+
 
