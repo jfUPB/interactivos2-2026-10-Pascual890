@@ -7,3 +7,5 @@
 
 
 ## Bitácora de reflexión
+
+https://github.com/Pascual890/Final-SFI2-VA/tree/main
