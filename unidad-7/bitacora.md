@@ -526,7 +526,6 @@ wssStrudel.on('connection', (ws) => {
 });
 
 console.log('🔍 Bridge DEBUG activo — p5:8081 | Strudel:8080');
-console.log('   Mirá la consola para ver el formato exacto de los mensajes OSC');
 ```
 LoopMIDI
 
